@@ -11,7 +11,7 @@ namespace WesselSoft.Domain.Test
         [InlineData(1, 1, 1.4142)]
         public void Calculo_de_modulo(double parteReal, double parteImaginaria, double modulo)
         {
-            var unComplejo = new Complejo(parteReal, parteImaginaria);
+            var unComplejo = Complejo.DesdeFormaBinomica(parteReal, parteImaginaria);
             Assert.Equal(modulo, unComplejo.Modulo, 4);
         }
     }

@@ -7,10 +7,9 @@ namespace WesselSoft.Domain
         public double ParteReal { get; set; }
         public double ParteImaginaria { get; set; }
 
-        public Complejo(double parteReal, double parteImaginaria)
+        public static Complejo DesdeFormaBinomica(double parteReal, double parteImaginaria)
         {
-            this.ParteReal = parteReal;
-            this.ParteImaginaria = parteImaginaria;
+            return new Complejo { ParteReal = parteReal, ParteImaginaria = parteImaginaria };
         }
 
         public double Modulo
