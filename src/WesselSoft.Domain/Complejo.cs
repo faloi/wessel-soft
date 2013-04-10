@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace WesselSoft.Domain
 {
@@ -32,6 +33,20 @@ namespace WesselSoft.Domain
         public double Modulo
         {
             get { return Math.Sqrt(Math.Pow(this.ParteImaginaria, 2) + Math.Pow(this.ParteReal, 2)); }
+        }
+
+        public double Argumento
+        {
+            get
+            {
+                var valorBase = Math.Atan(this.ParteImaginaria / this.ParteReal);
+
+                var cuadrantesConCorreccion = new[] { Cuadrante.Segundo, Cuadrante.Tercero };
+                if (cuadrantesConCorreccion.Contains(this.Cuadrante))
+                    valorBase += Math.PI;
+
+                return valorBase;
+            }
         }
     }
 }
