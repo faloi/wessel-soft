@@ -10,7 +10,7 @@ namespace WesselSoft.Domain
         public double ParteImaginaria { get; set; }
 
         public double Modulo { get {
-            return Math.Sqrt(Math.Pow(this.ParteImaginaria, 2) + Math.Pow(this.ParteReal, 2));
+            return Math.Sqrt(Math.Pow(this.ParteReal, 2) + Math.Pow(this.ParteImaginaria, 2));
         } }
 
         public double Argumento { get {
