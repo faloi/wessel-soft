@@ -22,6 +22,10 @@ namespace WesselSoft.Domain
             return valorBase;
         } }
 
+        public Complejo Conjugado { get {
+            return Complejo.DesdeFormaBinomica(this.ParteReal, -this.ParteImaginaria);
+        } }
+
         public string ToString(Representacion representacion) {
             switch(representacion) {
                 case Representacion.Binomica:
@@ -39,7 +43,7 @@ namespace WesselSoft.Domain
             return base.ToString();
         }
 
-        #region Operadores
+        #region Operaciones
             public static Complejo operator +(Complejo c1, Complejo c2) {
                 return Complejo.DesdeFormaBinomica(c1.ParteReal + c2.ParteReal, c1.ParteImaginaria + c2.ParteImaginaria);
             }
@@ -51,9 +55,6 @@ namespace WesselSoft.Domain
             }
             public static Complejo operator /(Complejo c1, Complejo c2) {
                 return Complejo.DesdeFormaPolar(c1.Modulo / c2.Modulo, c1.Argumento - c2.Argumento);
-            }
-            public static Complejo operator !(Complejo c) {
-                return Complejo.DesdeFormaBinomica(c.ParteReal, -c.ParteImaginaria);
             }
         #endregion
 
