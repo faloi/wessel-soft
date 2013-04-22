@@ -8,6 +8,9 @@ namespace WesselSoft.Domain
     {
         public double ParteReal { get; set; }
         public double ParteImaginaria { get; set; }
+        private const string FORMATO_NUMERO = "##.##";
+
+        private Complejo() { }
 
         public double Modulo { get {
             return Math.Sqrt(Math.Pow(this.ParteReal, 2) + Math.Pow(this.ParteImaginaria, 2));
@@ -22,13 +25,16 @@ namespace WesselSoft.Domain
         public string ToString(Representacion representacion) {
             switch(representacion) {
                 case Representacion.Binomica:
-                    return new StringBuilder()
-                        .Append(ParteReal.ToString("##.##"))
-                        .AppendFormat(" {0} ", ParteImaginaria > 0 ? "+" : "-")
-                        .AppendFormat("j * {0}", Math.Abs(ParteImaginaria).ToString("##.##"))
-                        .ToString();
+                    var parteReal = this.ParteReal.ToString(FORMATO_NUMERO);
+                    var signo = ParteImaginaria > 0 ? "+" : "-";
+                    var parteImaginaria = Math.Abs(this.ParteImaginaria).ToString(FORMATO_NUMERO);
+
+                    return String.Format("{0} {1} {2}j", parteReal, signo, parteImaginaria);
                 case Representacion.Polar:
-                    return "Están hablando del faaaaaaaaaasor";
+                    var modulo = this.Modulo.ToString(FORMATO_NUMERO);
+                    var argumento = this.Argumento.ToString(FORMATO_NUMERO);
+
+                    return String.Format("({0}, {1})", modulo, argumento);
             }
             return base.ToString();
         }
@@ -51,7 +57,7 @@ namespace WesselSoft.Domain
             }
         #endregion
 
-        #region Creadores
+        #region Constructores
             public static Complejo DesdeFormaBinomica(double parteReal, double parteImaginaria)
             {
                 return new Complejo { ParteReal = parteReal, ParteImaginaria = parteImaginaria };
