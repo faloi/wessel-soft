@@ -43,6 +43,7 @@ namespace WesselSoft.Domain
                         .Append(this.ParteImaginaria != 0 ? "{2}j" : "")
                         .ToString();
                     return String.Format(format, parteReal, signo, parteImaginaria);
+
                 case Representacion.Polar:
                     var modulo = this.Modulo.ToString(FORMATO_NUMERO);
                     try {
@@ -66,6 +67,7 @@ namespace WesselSoft.Domain
                 return Complejo.DesdeFormaPolar(c1.Modulo * c2.Modulo, c1.Argumento + c2.Argumento);
             }
             public static Complejo operator /(Complejo c1, Complejo c2) {
+                if (c2.EsNulo) throw new ComplejoNuloException("El divisor es el complejo nulo");
                 return Complejo.DesdeFormaPolar(c1.Modulo / c2.Modulo, c1.Argumento - c2.Argumento);
             }
 
