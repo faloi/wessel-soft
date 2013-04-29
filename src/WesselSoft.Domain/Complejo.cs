@@ -41,6 +41,10 @@ namespace WesselSoft.Domain
             return Math.Log(this.Modulo) + this.Argumento * Complejo.UnidadImaginaria();
         }
 
+        public Complejo RaizN(int n) {
+            throw new NotImplementedException("Me quiero ir a dormir");
+        }
+
         #region Constructores
             public static Complejo DesdeFormaBinomica(double parteReal, double parteImaginaria)
             {
