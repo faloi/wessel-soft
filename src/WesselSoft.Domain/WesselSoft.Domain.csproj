@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComplejoHelpers.cs" />
     <Compile Include="Representacion.cs" />
     <Compile Include="Complejo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
