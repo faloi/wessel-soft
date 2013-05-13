@@ -59,13 +59,20 @@ namespace WesselSoft.Domain
             }
         #endregion
 
-        public static bool operator ==(Complejo c1, Complejo c2) {
-            return c1.ParteReal == c2.ParteReal && c1.ParteImaginaria == c2.ParteImaginaria;
-        }
+        #region Equals
+            public static bool operator ==(Complejo c1, Complejo c2) {
+                return c1.ParteReal == c2.ParteReal && c1.ParteImaginaria == c2.ParteImaginaria;
+            }
 
-        public static bool operator !=(Complejo c1, Complejo c2)
-        {
-            return !(c1 == c2);
-        }
+            public static bool operator !=(Complejo c1, Complejo c2) {
+                return !(c1 == c2);
+            }
+
+            public bool Equals(Complejo c2) {
+                return this == c2;
+            }
+
+            public override int GetHashCode() { return 0; }
+        #endregion
     }
 }
