@@ -20,6 +20,10 @@ namespace WesselSoft.Domain
             return Complejo.DesdeFormaPolar(c1.Modulo / c2.Modulo, c1.Argumento - c2.Argumento);
         }
 
+        public static Complejo operator -(Complejo c) {
+            return Complejo.DesdeFormaBinomica(-c.ParteReal, -c.ParteImaginaria);
+        }
+
         #region Operadores con reales
             public static Complejo operator +(Complejo c, double r) {
                 var real = Complejo.DesdeFormaBinomica(r, 0);
@@ -54,5 +58,14 @@ namespace WesselSoft.Domain
                 return real / c;
             }
         #endregion
+
+        public static bool operator ==(Complejo c1, Complejo c2) {
+            return c1.ParteReal == c2.ParteReal && c1.ParteImaginaria == c2.ParteImaginaria;
+        }
+
+        public static bool operator !=(Complejo c1, Complejo c2)
+        {
+            return !(c1 == c2);
+        }
     }
 }
