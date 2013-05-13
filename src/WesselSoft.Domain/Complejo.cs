@@ -38,7 +38,7 @@ namespace WesselSoft.Domain
         }
 
         public Complejo LogaritmoNatural() {
-            return Math.Log(this.Modulo) + this.Argumento * Complejo.UnidadImaginaria();
+            return Math.Log(this.Modulo) + this.Argumento * Complejo.UnidadImaginaria;
         }
 
         public Complejo RaizN(int n) {
@@ -57,13 +57,13 @@ namespace WesselSoft.Domain
                 return Complejo.DesdeFormaBinomica(parteReal, parteImaginaria);
             }
 
-            public static Complejo Nulo() {
+            public static Complejo Nulo { get {
                 return Complejo.DesdeFormaBinomica(0, 0);
-            }
+            } }
 
-            public static Complejo UnidadImaginaria() {
+            public static Complejo UnidadImaginaria { get {
                 return Complejo.DesdeFormaBinomica(0, 1);
-            }
+            } }
         #endregion
 
         public string ToString(Representacion representacion)
