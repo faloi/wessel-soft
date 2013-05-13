@@ -65,10 +65,33 @@ namespace WesselSoft.Domain
                 return Complejo.DesdeFormaBinomica(0, 1);
             }
         #endregion
-    }
 
-    public class ComplejoNuloException : Exception
-    {
-        public ComplejoNuloException(string mensaje) : base(mensaje) {}
+        public string ToString(Representacion representacion)
+        {
+            switch (representacion) {
+                case Representacion.Binomica:
+                    var parteReal = this.ParteReal.ToString(FORMATO_NUMERO);
+                    var signo = ParteImaginaria > 0 ? "+" : "-";
+                    var parteImaginaria = Math.Abs(this.ParteImaginaria).ToString(FORMATO_NUMERO);
+
+                    var completo = this.ParteReal != 0 && this.ParteImaginaria != 0;
+                    var format = new StringBuilder()
+                        .Append(this.ParteReal != 0 || this.EsNulo ? "{0}" : "")
+                        .Append(completo || this.ParteImaginaria < 0 ? " {1} " : "")
+                        .Append(this.ParteImaginaria != 0 ? "{2}j" : "")
+                        .ToString();
+                    return String.Format(format, parteReal, signo, parteImaginaria);
+
+                case Representacion.Polar:
+                    var modulo = this.Modulo.ToString(FORMATO_NUMERO);
+                    try {
+                        var argumento = this.Argumento.ToString(FORMATO_NUMERO);
+                        return String.Format("[{0}; {1}]", modulo, argumento);
+                    } catch (ComplejoNuloException) {
+                        return "[Complejo nulo]";
+                    }
+            }
+            return base.ToString();
+        }
     }
 }

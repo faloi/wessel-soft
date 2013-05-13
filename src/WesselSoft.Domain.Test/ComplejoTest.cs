@@ -17,21 +17,6 @@ namespace WesselSoft.Domain.Test
         }
 
         [Theory]
-        [InlineData(0, 1, Cuadrante.Primero)]
-        [InlineData(1, 0, Cuadrante.Primero)]
-        [InlineData(-1, 0, Cuadrante.Segundo)]
-        [InlineData(0, -1, Cuadrante.Tercero)]
-        [InlineData(2, 1, Cuadrante.Primero)]
-        [InlineData(-2, 1, Cuadrante.Segundo)]
-        [InlineData(-2, -1, Cuadrante.Tercero)]
-        [InlineData(2, -1, Cuadrante.Cuarto)]
-        public void Cuadrante_al_que_pertenece(double parteReal, double parteImaginaria, Cuadrante cuadranteEsperado)
-        {
-            var unComplejo = Complejo.DesdeFormaBinomica(parteReal, parteImaginaria);
-            Assert.Equal(cuadranteEsperado, unComplejo.Cuadrante);
-        }
-
-        [Theory]
         [InlineData(2, 0, 0)]
         [InlineData(-2, 0, Math.PI)]
         [InlineData(0, 2, Math.PI / 2)]
