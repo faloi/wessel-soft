@@ -103,7 +103,7 @@ namespace WesselSoft.Domain
                         .Append(completo || this.ParteImaginaria < 0 ? " {1} " : "")
                         .Append(this.ParteImaginaria != 0 ? "{2}j" : "")
                         .ToString();
-                    return String.Format(format, parteReal, signo, parteImaginaria);
+                    return String.Format("({0}, {1})", parteReal, parteImaginaria);
 
                 case Representacion.Polar:
                     var modulo = this.Modulo.ToString(FORMATO_NUMERO);
