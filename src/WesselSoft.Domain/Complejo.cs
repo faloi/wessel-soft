@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace WesselSoft.Domain
 {
@@ -51,10 +52,32 @@ namespace WesselSoft.Domain
                 return new Complejo { ParteReal = parteReal, ParteImaginaria = parteImaginaria };
             }
 
-            public static Complejo DesdeFormaPolar(double modulo, double argumento) {
+            public static Complejo DesdeFormaPolar(double modulo, double argumento)
+            {
                 var parteReal = modulo * Math.Cos(argumento);
                 var parteImaginaria = modulo * Math.Sin(argumento);
                 return Complejo.DesdeFormaBinomica(parteReal, parteImaginaria);
+            }
+
+            public static Complejo DesdeString(String complejo)
+            {
+                Complejo numeroComplejo;
+
+                if (Utils.EsComplejoBinario(complejo))
+                {
+                    numeroComplejo = DesdeFormaBinomica(Utils.ParteRealComplejoBinario(complejo),
+                                                        Utils.ParteImaginariaComplejoBinario(complejo));
+                }
+                else if (Utils.EsComplejoPolar(complejo))
+                {
+                    numeroComplejo = DesdeFormaPolar(Utils.ParteModuloComplejoPolar(complejo),
+                                                     Utils.ParteAnguloComplejoPolar(complejo));
+                }
+                else
+                {
+                    throw new NoComplejoException("El String " + complejo + " no tiene formato válido.");
+                }
+                return numeroComplejo;
             }
 
             public static Complejo Nulo { get {

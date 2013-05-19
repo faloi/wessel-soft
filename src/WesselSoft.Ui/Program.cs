@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 using WesselSoft.Domain;
 
 namespace WesselSoft.Ui
@@ -9,7 +10,7 @@ namespace WesselSoft.Ui
     class Program
     {
         static void Main(string[] args) {
-            var repre = Representacion.Binomica;
+         /*   var repre = Representacion.Binomica;
             Console.WriteLine("Mirá el 3 + 2j: {0}", Complejo.DesdeFormaBinomica(3, 2).ToString(repre));
             Console.WriteLine("Mirá el 0: {0}", Complejo.DesdeFormaBinomica(0, 0).ToString(repre));
             Console.WriteLine("Mirá el -2.3: {0}", Complejo.DesdeFormaBinomica(-2.3, 0).ToString(repre));
@@ -24,7 +25,10 @@ namespace WesselSoft.Ui
             Console.WriteLine("Mirá el -4.5j: {0}", Complejo.DesdeFormaBinomica(0, -4.5).ToString(repre));
             Console.WriteLine("Mirá el 3.581 - 2.1102j: {0}", Complejo.DesdeFormaBinomica(3.581, -2.1102).ToString(repre));
 
-            Console.ReadKey();
+            Console.ReadKey();*/
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new OperacionesAvanzadas());
         }
     }
 }

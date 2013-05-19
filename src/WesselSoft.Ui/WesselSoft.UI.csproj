@@ -36,6 +36,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,14 +45,56 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalculoTransferencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CalculoTransferencia.Designer.cs">
+      <DependentUpon>CalculoTransferencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OperacionesAvanzadas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OperacionesAvanzadas.Designer.cs">
+      <DependentUpon>OperacionesAvanzadas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OperacionesBasicas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OperacionesBasicas.Designer.cs">
+      <DependentUpon>OperacionesBasicas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SumaFasores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SumaFasores.Designer.cs">
+      <DependentUpon>SumaFasores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIController.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WesselSoft.Domain\WesselSoft.Domain.csproj">
       <Project>{41644690-42FB-45B4-9AD4-FB6DF229E5BF}</Project>
       <Name>WesselSoft.Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OperacionesAvanzadas.resx">
+      <DependentUpon>OperacionesAvanzadas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OperacionesBasicas.resx">
+      <DependentUpon>OperacionesBasicas.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
