@@ -6,24 +6,31 @@ namespace WesselSoft.Ui
 {
     public partial class OperacionesBasicas : Form
     {
-        public OperacionesBasicas() {
+        public OperacionesBasicas()
+        {
             InitializeComponent();
         }
 
-        private void Btn_DoOperation_Click(object sender, EventArgs e) {
-            UIController controller = new UIController();
+        private void Btn_DoOperation_Click(object sender, EventArgs e)
+        {
+            var controller = new UIController();
             Complejo complejo1;
             Complejo complejo2;
-            try {
+            try
+            {
                 complejo1 = Complejo.DesdeString(TxtBox_Number1.Text);
                 complejo2 = Complejo.DesdeString(TxtBox_Number2.Text);
-            } catch (Domain.NoComplejoException exc) {
+            }
+            catch (NoComplejoException exc)
+            {
                 MessageBox.Show(exc.Message);
                 return;
             }
             Complejo resultado = Complejo.Nulo;
-            if (ComboBox_Operation.SelectedItem != null) {
-                switch (ComboBox_Operation.SelectedItem.ToString()) {
+            if (ComboBox_Operation.SelectedItem != null)
+            {
+                switch (ComboBox_Operation.SelectedItem.ToString())
+                {
                     case "+":
                         resultado = complejo1 + complejo2;
                         break;
@@ -31,13 +38,15 @@ namespace WesselSoft.Ui
                         resultado = complejo1 - complejo2;
                         break;
                     case "*":
-                        resultado = complejo1 * complejo2;
+                        resultado = complejo1*complejo2;
                         break;
                     case "/":
-                        resultado = complejo1 / complejo2;
+                        resultado = complejo1/complejo2;
                         break;
                 }
-            } else {
+            }
+            else
+            {
                 MessageBox.Show("No seleccionó operación");
                 return;
             }

@@ -4,7 +4,8 @@ namespace WesselSoft.Ui
 {
     public partial class CalculoTransferencia : Form
     {
-        public CalculoTransferencia() {
+        public CalculoTransferencia()
+        {
             InitializeComponent();
         }
     }

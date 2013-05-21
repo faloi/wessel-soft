@@ -36,6 +36,7 @@
             this.TxtBox_Result = new System.Windows.Forms.TextBox();
             this.TxtBox_Number2 = new System.Windows.Forms.TextBox();
             this.TxtBox_Number1 = new System.Windows.Forms.TextBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.GroupBox_Result.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,11 +116,20 @@
             this.TxtBox_Number1.Size = new System.Drawing.Size(100, 20);
             this.TxtBox_Number1.TabIndex = 8;
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(181, 115);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(96, 17);
+            this.listBox1.TabIndex = 13;
+            // 
             // OperacionesAvanzadas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(492, 127);
+            this.ClientSize = new System.Drawing.Size(492, 357);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.GroupBox_Result);
             this.Controls.Add(this.Btn_DoOperation);
             this.Controls.Add(this.ComboBox_Operation);
@@ -147,5 +157,6 @@
         private System.Windows.Forms.TextBox TxtBox_Result;
         private System.Windows.Forms.TextBox TxtBox_Number2;
         private System.Windows.Forms.TextBox TxtBox_Number1;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

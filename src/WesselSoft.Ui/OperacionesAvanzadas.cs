@@ -6,44 +6,55 @@ namespace WesselSoft.Ui
 {
     public partial class OperacionesAvanzadas : Form
     {
-        public OperacionesAvanzadas() {
+        public OperacionesAvanzadas()
+        {
             InitializeComponent();
         }
 
-        private void Btn_DoOperation_Click_1(object sender, EventArgs e) {
+        private void Btn_DoOperation_Click_1(object sender, EventArgs e)
+        {
             //Adaptar para que la raiz devuelva varios resultados
-            /*
-            UIController controller = new UIController();
+
+            var controller = new UIController();
             Complejo complejo1;
             int coeficienteEntero = 1;
-            try {
+            try
+            {
                 complejo1 = Complejo.DesdeString(TxtBox_Number1.Text);
-            } catch (Domain.NoComplejoException exc) {
+            }
+            catch (NoComplejoException exc)
+            {
                 MessageBox.Show(exc.Message);
                 return;
             }
-            try {
+            try
+            {
                 coeficienteEntero = Int32.Parse(TxtBox_Number2.Text);
-            } catch (Exception) {
+            }
+            catch (Exception)
+            {
                 MessageBox.Show("El formato del numero para realizar la operación no es válido.");
                 return;
             }
             Complejo resultado = Complejo.Nulo;
-            if (ComboBox_Operation.SelectedItem != null) {
-                switch (ComboBox_Operation.SelectedItem.ToString()) {
+            if (ComboBox_Operation.SelectedItem != null)
+            {
+                switch (ComboBox_Operation.SelectedItem.ToString())
+                {
                     case "Raiz":
-                        resultado = complejo1.RaizN(coeficienteEntero);
+                        //resultado = complejo1.RaizN(coeficienteEntero);
                         break;
                     case "Potencia":
-                        resultado = complejo1.ElevarA((uint)coeficienteEntero);
+                        resultado = complejo1.ElevarA((uint) coeficienteEntero);
                         break;
                 }
-            } else {
+            }
+            else
+            {
                 MessageBox.Show("No seleccionó operación");
                 return;
             }
             TxtBox_Result.Text = resultado.ToString(controller.GetSelectedResultEnum(GroupBox_Result));
-             * */
         }
     }
 }
