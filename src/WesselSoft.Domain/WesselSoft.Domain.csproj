@@ -39,13 +39,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Complejo.Exceptions.cs" />
+    <Compile Include="Exceptions.cs" />
     <Compile Include="Complejo.Operadores.cs" />
     <Compile Include="FuncionSenoidal.cs" />
-    <Compile Include="Representacion.cs" />
+    <Compile Include="Complejo.Representacion.cs" />
     <Compile Include="Complejo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Complejo.Utils.cs" />
+    <Compile Include="Utils.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

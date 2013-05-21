@@ -11,4 +11,9 @@ namespace WesselSoft.Domain
     {
         public ComplejoNuloException(string mensaje) : base(mensaje) { }
     }
+
+    public class SumaSenoidalImposibleException : Exception
+    {
+        public SumaSenoidalImposibleException(string mensaje) : base(mensaje) { }
+    }
 }
