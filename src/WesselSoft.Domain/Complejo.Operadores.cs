@@ -2,7 +2,7 @@
 
 namespace WesselSoft.Domain
 {
-    public partial struct Complejo
+    public partial class Complejo
     {
         public static Complejo operator +(Complejo c1, Complejo c2) {
             return Complejo.DesdeFormaBinomica(c1.ParteReal + c2.ParteReal, c1.ParteImaginaria + c2.ParteImaginaria);
