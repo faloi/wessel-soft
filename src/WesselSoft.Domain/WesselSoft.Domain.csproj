@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Complejo.Exceptions.cs" />
     <Compile Include="Complejo.Operadores.cs" />
+    <Compile Include="FuncionSenoidal.cs" />
     <Compile Include="Representacion.cs" />
     <Compile Include="Complejo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

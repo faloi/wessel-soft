@@ -5,8 +5,8 @@ namespace WesselSoft.Domain
 {
     public partial class Complejo
     {
-        public double ParteReal { get; set; }
-        public double ParteImaginaria { get; set; }
+        public double ParteReal { get; protected set; }
+        public double ParteImaginaria { get; protected set; }
         private const string FORMATO_NUMERO = "F2";
 
         private Complejo() { }
