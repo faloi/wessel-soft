@@ -3,13 +3,11 @@ using System.Collections.Generic;
 
 namespace WesselSoft.Domain
 {
-    public partial class Complejo
+    public partial struct Complejo
     {
-        public double ParteReal { get; protected set; }
-        public double ParteImaginaria { get; protected set; }
+        public double ParteReal { get; private set; }
+        public double ParteImaginaria { get; private set; }
         private const string FORMATO_NUMERO = "F2";
-
-        private Complejo() { }
 
         public double Modulo { get {
             return Math.Sqrt(Math.Pow(this.ParteReal, 2) + Math.Pow(this.ParteImaginaria, 2));

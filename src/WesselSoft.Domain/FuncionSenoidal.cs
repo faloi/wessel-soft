@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace WesselSoft.Domain
+﻿namespace WesselSoft.Domain
 {
     public enum TipoFuncionSenoidal { Seno, Coseno }
 
-    public class FuncionSenoidal
+    public struct FuncionSenoidal
     {
-        public double Amplitud { get; protected set; }
-        public TipoFuncionSenoidal Tipo { get; protected set; }
-        public double Pulsación { get; protected set; }
-        public double Argumento { get; protected set; }
+        public double Amplitud { get; private set; }
+        public TipoFuncionSenoidal Tipo { get; private set; }
+        public double Pulsación { get; private set; }
+        public double Argumento { get; private set; }
 
 
     }
