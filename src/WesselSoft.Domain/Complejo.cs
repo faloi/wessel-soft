@@ -47,37 +47,24 @@ namespace WesselSoft.Domain
         }
 
         #region Constructores
-            public static Complejo DesdeFormaBinomica(double parteReal, double parteImaginaria)
-            {
+            public static Complejo DesdeFormaBinomica(double parteReal, double parteImaginaria) {
                 return new Complejo { ParteReal = parteReal, ParteImaginaria = parteImaginaria };
             }
 
-            public static Complejo DesdeFormaPolar(double modulo, double argumento)
-            {
+            public static Complejo DesdeFormaPolar(double modulo, double argumento) {
                 var parteReal = modulo * Math.Cos(argumento);
                 var parteImaginaria = modulo * Math.Sin(argumento);
                 return Complejo.DesdeFormaBinomica(parteReal, parteImaginaria);
             }
 
-            public static Complejo DesdeString(String complejo)
-            {
-                Complejo numeroComplejo;
-
+            public static Complejo DesdeString(String complejo) {
                 if (Utils.EsComplejoBinario(complejo))
-                {
-                    numeroComplejo = DesdeFormaBinomica(Utils.ParteRealComplejoBinario(complejo),
-                                                        Utils.ParteImaginariaComplejoBinario(complejo));
-                }
-                else if (Utils.EsComplejoPolar(complejo))
-                {
-                    numeroComplejo = DesdeFormaPolar(Utils.ParteModuloComplejoPolar(complejo),
-                                                     Utils.ParteAnguloComplejoPolar(complejo));
-                }
-                else
-                {
-                    throw new NoComplejoException("El String " + complejo + " no tiene formato válido.");
-                }
-                return numeroComplejo;
+                    return DesdeFormaBinomica(Utils.ParteRealComplejoBinario(complejo), Utils.ParteImaginariaComplejoBinario(complejo));
+
+                if (Utils.EsComplejoPolar(complejo))
+                    return DesdeFormaPolar(Utils.ParteModuloComplejoPolar(complejo), Utils.ParteAnguloComplejoPolar(complejo));
+
+                throw new NoComplejoException("El String " + complejo + " no tiene formato válido.");
             }
 
             public static Complejo Nulo { get {
@@ -92,19 +79,11 @@ namespace WesselSoft.Domain
         public string ToString(Representacion representacion)
         {
             switch (representacion) {
-                case Representacion.Binomica:
+                default:
                     var parteReal = this.ParteReal.ToString(FORMATO_NUMERO);
-                    var signo = ParteImaginaria > 0 ? "+" : "-";
                     var parteImaginaria = Math.Abs(this.ParteImaginaria).ToString(FORMATO_NUMERO);
 
-                    var completo = this.ParteReal != 0 && this.ParteImaginaria != 0;
-                    var format = new StringBuilder()
-                        .Append(this.ParteReal != 0 || this.EsNulo ? "{0}" : "")
-                        .Append(completo || this.ParteImaginaria < 0 ? " {1} " : "")
-                        .Append(this.ParteImaginaria != 0 ? "{2}j" : "")
-                        .ToString();
-                    return String.Format("({0}, {1})", parteReal, parteImaginaria);
-
+                    return String.Format("({0}; {1})", parteReal, parteImaginaria);
                 case Representacion.Polar:
                     var modulo = this.Modulo.ToString(FORMATO_NUMERO);
                     try {
@@ -114,7 +93,6 @@ namespace WesselSoft.Domain
                         return "[Complejo nulo]";
                     }
             }
-            return base.ToString();
         }
     }
 }
