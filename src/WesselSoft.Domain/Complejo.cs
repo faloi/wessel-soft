@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
+using System.Collections.Generic;
 
 namespace WesselSoft.Domain
 {
@@ -42,8 +40,17 @@ namespace WesselSoft.Domain
             return Math.Log(this.Modulo) + this.Argumento * Complejo.UnidadImaginaria;
         }
 
-        public Complejo RaizN(int n) {
-            throw new NotImplementedException("Me quiero ir a dormir");
+        public IList<Complejo> RaizN(int n) {
+            var raices = new List<Complejo>();
+            for (int k = 0; k < n; k++)
+                raices.Add(
+                    Complejo.DesdeFormaPolar(
+                        modulo: Math.Pow(this.Modulo, 1/n),
+                        argumento: (this.Argumento + 2 * k * Math.PI) / n
+                    )
+                );
+
+            return raices;
         }
 
         #region Constructores
