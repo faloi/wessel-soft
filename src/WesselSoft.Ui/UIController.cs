@@ -9,13 +9,12 @@ namespace WesselSoft.Ui
 {
     class UIController
     {
-
-        public Representacion GetSelectedResultEnum(GroupBox groupoBox)
-        {
-            var checkedButton = groupoBox.Controls.OfType<RadioButton>()
-                                      .FirstOrDefault(r => r.Checked);
+        public Representacion GetSelectedResultEnum(GroupBox groupoBox) {
+            var checkedButton = groupoBox.Controls
+                .OfType<RadioButton>()
+                .FirstOrDefault(r => r.Checked);
             Representacion enumOut;
-            Representacion.TryParse(checkedButton.Text, false, out enumOut);
+            Enum.TryParse(checkedButton.Text, false, out enumOut);
             return enumOut;
         }
     }
