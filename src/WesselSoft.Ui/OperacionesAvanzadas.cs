@@ -22,7 +22,7 @@ namespace WesselSoft.Ui
             }
             try {
                 coeficienteEntero = Int32.Parse(TxtBox_Number2.Text);
-            } catch (Exception exc2) {
+            } catch (Exception) {
                 MessageBox.Show("El formato del numero para realizar la operación no es válido.");
                 return;
             }

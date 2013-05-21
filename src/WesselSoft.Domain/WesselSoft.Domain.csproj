@@ -39,8 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Complejo.NoComplejoException.cs" />
-    <Compile Include="ComplejoNuloException.cs" />
+    <Compile Include="Complejo.Exceptions.cs" />
     <Compile Include="Complejo.Operadores.cs" />
     <Compile Include="Representacion.cs" />
     <Compile Include="Complejo.cs" />

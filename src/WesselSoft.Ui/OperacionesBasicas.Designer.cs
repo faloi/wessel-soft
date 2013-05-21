@@ -128,7 +128,9 @@
             this.Controls.Add(this.TxtBox_Result);
             this.Controls.Add(this.TxtBox_Number2);
             this.Controls.Add(this.TxtBox_Number1);
+            this.MinimizeBox = false;
             this.Name = "OperacionesBasicas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OperacionesBasicas";
             this.GroupBox_Result.ResumeLayout(false);
             this.GroupBox_Result.PerformLayout();

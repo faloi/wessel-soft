@@ -89,6 +89,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CalculoTransferencia.resx">
+      <DependentUpon>CalculoTransferencia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OperacionesBasicas.resx">
       <DependentUpon>OperacionesBasicas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SumaFasores.resx">
+      <DependentUpon>SumaFasores.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

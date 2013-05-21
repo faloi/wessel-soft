@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Linq;
-using System.Text;
 
 namespace WesselSoft.Domain
 {
@@ -68,8 +66,8 @@ namespace WesselSoft.Domain
                 return !(c1 == c2);
             }
 
-            public bool Equals(Complejo c2) {
-                return this == c2;
+            public override bool Equals(Object c2) {
+                return this == (Complejo) c2;
             }
 
             public override int GetHashCode() { return 0; }

@@ -28,7 +28,7 @@ namespace WesselSoft.Ui
             Console.ReadKey();*/
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new OperacionesAvanzadas());
+            Application.Run(new MainWindow());
         }
     }
 }
