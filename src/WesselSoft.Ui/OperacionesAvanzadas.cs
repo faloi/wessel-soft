@@ -11,6 +11,8 @@ namespace WesselSoft.Ui
         }
 
         private void Btn_DoOperation_Click_1(object sender, EventArgs e) {
+            //Adaptar para que la raiz devuelva varios resultados
+            /*
             UIController controller = new UIController();
             Complejo complejo1;
             int coeficienteEntero = 1;
@@ -41,6 +43,7 @@ namespace WesselSoft.Ui
                 return;
             }
             TxtBox_Result.Text = resultado.ToString(controller.GetSelectedResultEnum(GroupBox_Result));
+             * */
         }
     }
 }
