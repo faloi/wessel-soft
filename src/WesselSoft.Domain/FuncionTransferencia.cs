@@ -19,8 +19,8 @@ namespace WesselSoft.Domain
         public Complejo EvaluarEn(Complejo complejo) {
             return
                 K * Ceros.Aggregate((a, b) => a * (complejo - b))
-//                  _____________________________________________
-                /   Polos.Aggregate((a, b) => a * (complejo - b));
+                /*  _____________________________________________  */ /
+                    Polos.Aggregate((a, b) => a * (complejo - b));
         }
     }
 }
