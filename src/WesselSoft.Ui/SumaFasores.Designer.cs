@@ -36,8 +36,6 @@
             this.TxtBox_Frequency1 = new System.Windows.Forms.TextBox();
             this.TxtBox_Amplitude1 = new System.Windows.Forms.TextBox();
             this.ComboBox_Function1 = new System.Windows.Forms.ComboBox();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -127,25 +125,6 @@
             this.ComboBox_Function1.Name = "ComboBox_Function1";
             this.ComboBox_Function1.Size = new System.Drawing.Size(73, 21);
             this.ComboBox_Function1.TabIndex = 2;
-            // 
-            // shapeContainer1
-            // 
-            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(630, 238);
-            this.shapeContainer1.TabIndex = 27;
-            this.shapeContainer1.TabStop = false;
-            // 
-            // lineShape1
-            // 
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 48;
-            this.lineShape1.X2 = 585;
-            this.lineShape1.Y1 = 155;
-            this.lineShape1.Y2 = 155;
             // 
             // label5
             // 
