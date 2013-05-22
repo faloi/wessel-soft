@@ -10,7 +10,8 @@ namespace WesselSoft.Domain
         public IList<Complejo> Ceros { get; protected set; }
         public IList<Complejo> Polos { get; protected set; }
 
-        public FuncionTransferencia(double k, IList<Complejo> ceros, IList<Complejo> polos) {
+        public FuncionTransferencia(double k, IList<Complejo> ceros, IList<Complejo> polos)
+        {
             this.K = k;
             this.Ceros = ceros;
             this.Polos = polos;
