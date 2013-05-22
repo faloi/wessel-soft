@@ -45,7 +45,7 @@ namespace WesselSoft.Domain
             for (int k = 0; k < n; k++)
                 raices.Add(
                     Complejo.DesdeFormaPolar(
-                        modulo: Math.Pow(this.Modulo, 1/n),
+                        modulo: Math.Pow(this.Modulo, 1f/n),
                         argumento: (this.Argumento + 2 * k * Math.PI) / n
                     )
                 );
