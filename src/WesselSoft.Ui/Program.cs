@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Globalization;
+using System.Windows.Forms;
 
 namespace WesselSoft.Ui
 {
@@ -25,6 +26,7 @@ namespace WesselSoft.Ui
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainWindow());
+            
         }
     }
 }

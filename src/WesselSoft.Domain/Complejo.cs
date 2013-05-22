@@ -90,12 +90,12 @@ namespace WesselSoft.Domain
                     var parteReal = this.ParteReal.ToString(FORMATO_NUMERO);
                     var parteImaginaria = Math.Abs(this.ParteImaginaria).ToString(FORMATO_NUMERO);
 
-                    return String.Format("({0}, {1})", parteReal, parteImaginaria);
+                    return String.Format(System.Globalization.CultureInfo.GetCultureInfo("en-US"), "({0}, {1})", parteReal, parteImaginaria);
                 case Representacion.Polar:
                     var modulo = this.Modulo.ToString(FORMATO_NUMERO);
                     try {
                         var argumento = this.Argumento.ToString(FORMATO_NUMERO);
-                        return String.Format("[{0}; {1}]", modulo, argumento);
+                        return String.Format(System.Globalization.CultureInfo.GetCultureInfo("en-US"), "[{0}; {1}]", modulo, argumento);
                     } catch (ComplejoNuloException) {
                         return "[Complejo nulo]";
                     }
