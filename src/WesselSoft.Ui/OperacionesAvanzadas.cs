@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using WesselSoft.Domain;
+using System.Linq;
 
 namespace WesselSoft.Ui
 {
@@ -36,17 +38,20 @@ namespace WesselSoft.Ui
                 MessageBox.Show("El formato del numero para realizar la operación no es válido.");
                 return;
             }
-            Complejo resultado = Complejo.Nulo;
+            List<Complejo> resultados;
             if (ComboBox_Operation.SelectedItem != null)
             {
                 switch (ComboBox_Operation.SelectedItem.ToString())
                 {
                     case "Raiz":
-                        //resultado = complejo1.RaizN(coeficienteEntero);
+                        resultados = (List<Complejo>) complejo1.RaizN(coeficienteEntero);
                         break;
                     case "Potencia":
-                        resultado = complejo1.ElevarA((uint) coeficienteEntero);
+                        resultados = new List<Complejo>();
+                        resultados.Add(complejo1.ElevarA((uint) coeficienteEntero));
                         break;
+                    default:
+                        return;
                 }
             }
             else
@@ -54,7 +59,23 @@ namespace WesselSoft.Ui
                 MessageBox.Show("No seleccionó operación");
                 return;
             }
-            TxtBox_Result.Text = resultado.ToString(controller.GetSelectedResultEnum(GroupBox_Result));
+            ListBox_Result.Items.Clear();
+            resultados.ForEach(item => ListBox_Result.Items.Add(item.ToString(controller.GetSelectedResultEnum(GroupBox_EnumResult))));
+            AutoScaleListBox();
         }
+
+        private void AutoScaleListBox()
+        {
+            if (ListBox_Result.Items.Count > 6)
+            {
+                ListBox_Result.Height = 147;
+            }
+            else
+            {
+                ListBox_Result.Height = 15 * ListBox_Result.Items.Count;
+            }
+        }
+
+
     }
 }

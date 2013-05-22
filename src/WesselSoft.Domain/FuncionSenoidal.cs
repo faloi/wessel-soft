@@ -24,7 +24,7 @@ namespace WesselSoft.Domain
 
         public FuncionSenoidal SumarCon(FuncionSenoidal otraFuncion) {
             if (this.Pulsación != otraFuncion.Pulsación)
-                throw new SumaSenoidalImposibleException("No se puede, las frecuencias son distintas");
+                throw new SumaSenoidalImposibleException("No se puede resolver, las frecuencias son distintas");
 
             if (this.Tipo != otraFuncion.Tipo)
                 otraFuncion.CambiarTipoA(this.Tipo);

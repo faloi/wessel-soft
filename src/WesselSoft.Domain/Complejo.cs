@@ -90,7 +90,7 @@ namespace WesselSoft.Domain
                     var parteReal = this.ParteReal.ToString(FORMATO_NUMERO);
                     var parteImaginaria = Math.Abs(this.ParteImaginaria).ToString(FORMATO_NUMERO);
 
-                    return String.Format("({0}; {1})", parteReal, parteImaginaria);
+                    return String.Format("({0}, {1})", parteReal, parteImaginaria);
                 case Representacion.Polar:
                     var modulo = this.Modulo.ToString(FORMATO_NUMERO);
                     try {

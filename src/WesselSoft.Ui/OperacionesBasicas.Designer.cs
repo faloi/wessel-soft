@@ -57,6 +57,7 @@
             // 
             this.TxtBox_Result.Location = new System.Drawing.Point(351, 82);
             this.TxtBox_Result.Name = "TxtBox_Result";
+            this.TxtBox_Result.ReadOnly = true;
             this.TxtBox_Result.Size = new System.Drawing.Size(100, 20);
             this.TxtBox_Result.TabIndex = 6;
             // 

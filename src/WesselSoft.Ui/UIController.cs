@@ -16,5 +16,23 @@ namespace WesselSoft.Ui
             Enum.TryParse(checkedButton.Text, false, out enumOut);
             return enumOut;
         }
+
+
+        public static void IsNumeric(string text, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar)
+                && !char.IsDigit(e.KeyChar)
+                && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if (e.KeyChar == '.'
+                && text.IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

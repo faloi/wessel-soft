@@ -28,28 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.GroupBox_Result = new System.Windows.Forms.GroupBox();
+            this.GroupBox_EnumResult = new System.Windows.Forms.GroupBox();
             this.RadioBtn_Polar = new System.Windows.Forms.RadioButton();
             this.RadioBtn_Binomica = new System.Windows.Forms.RadioButton();
             this.Btn_DoOperation = new System.Windows.Forms.Button();
             this.ComboBox_Operation = new System.Windows.Forms.ComboBox();
-            this.TxtBox_Result = new System.Windows.Forms.TextBox();
             this.TxtBox_Number2 = new System.Windows.Forms.TextBox();
             this.TxtBox_Number1 = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.GroupBox_Result.SuspendLayout();
+            this.ListBox_Result = new System.Windows.Forms.ListBox();
+            this.GroupBox_EnumResult.SuspendLayout();
             this.SuspendLayout();
             // 
-            // GroupBox_Result
+            // GroupBox_EnumResult
             // 
-            this.GroupBox_Result.Controls.Add(this.RadioBtn_Polar);
-            this.GroupBox_Result.Controls.Add(this.RadioBtn_Binomica);
-            this.GroupBox_Result.Location = new System.Drawing.Point(149, 4);
-            this.GroupBox_Result.Name = "GroupBox_Result";
-            this.GroupBox_Result.Size = new System.Drawing.Size(200, 44);
-            this.GroupBox_Result.TabIndex = 7;
-            this.GroupBox_Result.TabStop = false;
-            this.GroupBox_Result.Text = "Resultado";
+            this.GroupBox_EnumResult.Controls.Add(this.RadioBtn_Polar);
+            this.GroupBox_EnumResult.Controls.Add(this.RadioBtn_Binomica);
+            this.GroupBox_EnumResult.Location = new System.Drawing.Point(149, 4);
+            this.GroupBox_EnumResult.Name = "GroupBox_EnumResult";
+            this.GroupBox_EnumResult.Size = new System.Drawing.Size(200, 44);
+            this.GroupBox_EnumResult.TabIndex = 7;
+            this.GroupBox_EnumResult.TabStop = false;
+            this.GroupBox_EnumResult.Text = "Resultado";
             // 
             // RadioBtn_Polar
             // 
@@ -95,13 +94,6 @@
             this.ComboBox_Operation.TabIndex = 9;
             this.ComboBox_Operation.Text = "Operacion";
             // 
-            // TxtBox_Result
-            // 
-            this.TxtBox_Result.Location = new System.Drawing.Point(366, 71);
-            this.TxtBox_Result.Name = "TxtBox_Result";
-            this.TxtBox_Result.Size = new System.Drawing.Size(100, 20);
-            this.TxtBox_Result.TabIndex = 12;
-            // 
             // TxtBox_Number2
             // 
             this.TxtBox_Number2.Location = new System.Drawing.Point(240, 71);
@@ -116,32 +108,35 @@
             this.TxtBox_Number1.Size = new System.Drawing.Size(100, 20);
             this.TxtBox_Number1.TabIndex = 8;
             // 
-            // listBox1
+            // ListBox_Result
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(181, 115);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(96, 17);
-            this.listBox1.TabIndex = 13;
+            this.ListBox_Result.FormattingEnabled = true;
+            this.ListBox_Result.IntegralHeight = false;
+            this.ListBox_Result.Location = new System.Drawing.Point(370, 69);
+            this.ListBox_Result.MaximumSize = new System.Drawing.Size(96, 147);
+            this.ListBox_Result.MinimumSize = new System.Drawing.Size(96, 30);
+            this.ListBox_Result.Name = "ListBox_Result";
+            this.ListBox_Result.Size = new System.Drawing.Size(96, 30);
+            this.ListBox_Result.TabIndex = 13;
             // 
             // OperacionesAvanzadas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(492, 357);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.GroupBox_Result);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(492, 234);
+            this.Controls.Add(this.ListBox_Result);
+            this.Controls.Add(this.GroupBox_EnumResult);
             this.Controls.Add(this.Btn_DoOperation);
             this.Controls.Add(this.ComboBox_Operation);
-            this.Controls.Add(this.TxtBox_Result);
             this.Controls.Add(this.TxtBox_Number2);
             this.Controls.Add(this.TxtBox_Number1);
             this.MaximizeBox = false;
             this.Name = "OperacionesAvanzadas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OperacionesAvanzadas";
-            this.GroupBox_Result.ResumeLayout(false);
-            this.GroupBox_Result.PerformLayout();
+            this.GroupBox_EnumResult.ResumeLayout(false);
+            this.GroupBox_EnumResult.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,14 +144,13 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox GroupBox_Result;
+        private System.Windows.Forms.GroupBox GroupBox_EnumResult;
         private System.Windows.Forms.RadioButton RadioBtn_Polar;
         private System.Windows.Forms.RadioButton RadioBtn_Binomica;
         private System.Windows.Forms.Button Btn_DoOperation;
         private System.Windows.Forms.ComboBox ComboBox_Operation;
-        private System.Windows.Forms.TextBox TxtBox_Result;
         private System.Windows.Forms.TextBox TxtBox_Number2;
         private System.Windows.Forms.TextBox TxtBox_Number1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox ListBox_Result;
     }
 }

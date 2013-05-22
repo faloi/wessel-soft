@@ -52,5 +52,6 @@ namespace WesselSoft.Ui
             }
             TxtBox_Result.Text = resultado.ToString(controller.GetSelectedResultEnum(GroupBox_Result));
         }
+
     }
 }
