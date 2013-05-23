@@ -279,7 +279,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(630, 238);
+            this.ClientSize = new System.Drawing.Size(612, 242);
             this.Controls.Add(this.TxtBox_FunctionResult);
             this.Controls.Add(this.Btn_Result);
             this.Controls.Add(this.label9);
@@ -305,7 +305,6 @@
             this.Controls.Add(this.TxtBox_Frequency1);
             this.Controls.Add(this.TxtBox_Amplitude1);
             this.Controls.Add(this.ComboBox_Function1);
-            this.Controls.Add(this.shapeContainer1);
             this.MaximizeBox = false;
             this.Name = "SumaFasores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -325,8 +324,6 @@
         private System.Windows.Forms.TextBox TxtBox_Frequency1;
         private System.Windows.Forms.TextBox TxtBox_Amplitude1;
         private System.Windows.Forms.ComboBox ComboBox_Function1;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;

@@ -42,6 +42,7 @@ namespace WesselSoft.Domain.Test
             );
         }
 
+		/*
         [Theory]
         [InlineData(Complejo.DesdeFormaBinomica(4,5))]
         public void Conjugado_del_complejo(Complejo c) {
@@ -49,6 +50,7 @@ namespace WesselSoft.Domain.Test
             Assert.Equal(c.ParteReal, conjugado.ParteReal);
             Assert.Equal(-c.ParteImaginaria, conjugado.ParteImaginaria);
         }
+		*/
 
         [Fact]
         public void Complejo_es_nulo() {
@@ -57,7 +59,8 @@ namespace WesselSoft.Domain.Test
             Assert.True(Complejo.Nulo.EsNulo);
         }
 
-        [Theory]
+        /*
+		[Theory]
         [InlineData(Complejo.DesdeFormaBinomica(3, 6), 2, Complejo.DesdeFormaBinomica(-27, 36))]
         [InlineData(Complejo.DesdeFormaBinomica(3, -6), 3, Complejo.DesdeFormaBinomica(-297, 54))]
         [InlineData(Complejo.DesdeFormaBinomica(3, 6), 1, Complejo.DesdeFormaBinomica(3, 6))]
@@ -75,6 +78,7 @@ namespace WesselSoft.Domain.Test
             Assert.True(Math.Abs(esperado.ParteReal - logaritmo.ParteReal) < 0.5);
             Assert.True(Math.Abs(esperado.ParteImaginaria - logaritmo.ParteImaginaria) < 0.5);
         }
+		*/
 
         public void Calculo_de_raiz() {
             Complejo.DesdeFormaBinomica(2, 3).RaizN(3);
