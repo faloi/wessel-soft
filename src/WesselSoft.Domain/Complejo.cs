@@ -87,15 +87,15 @@ namespace WesselSoft.Domain
         {
             switch (representacion) {
                 default:
-                    var parteReal = this.ParteReal.ToString(FORMATO_NUMERO);
-                    var parteImaginaria = Math.Abs(this.ParteImaginaria).ToString(FORMATO_NUMERO);
+                    var parteReal = this.ParteReal.ToString(FORMATO_NUMERO, System.Globalization.CultureInfo.GetCultureInfo("en-US"));
+                    var parteImaginaria = Math.Abs(this.ParteImaginaria).ToString(FORMATO_NUMERO, System.Globalization.CultureInfo.GetCultureInfo("en-US"));
 
-                    return String.Format(System.Globalization.CultureInfo.GetCultureInfo("en-US"), "({0}, {1})", parteReal, parteImaginaria);
+                    return String.Format("({0}, {1})", parteReal, parteImaginaria);
                 case Representacion.Polar:
-                    var modulo = this.Modulo.ToString(FORMATO_NUMERO);
+                    var modulo = this.Modulo.ToString(FORMATO_NUMERO, System.Globalization.CultureInfo.GetCultureInfo("en-US"));
                     try {
-                        var argumento = this.Argumento.ToString(FORMATO_NUMERO);
-                        return String.Format(System.Globalization.CultureInfo.GetCultureInfo("en-US"), "[{0}; {1}]", modulo, argumento);
+                        var argumento = this.Argumento.ToString(FORMATO_NUMERO, System.Globalization.CultureInfo.GetCultureInfo("en-US"));
+                        return String.Format("[{0}; {1}]", modulo, argumento);
                     } catch (ComplejoNuloException) {
                         return "[Complejo nulo]";
                     }
