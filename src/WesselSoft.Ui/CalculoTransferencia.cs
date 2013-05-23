@@ -33,7 +33,7 @@ namespace WesselSoft.Ui
             {
                 constante = double.Parse(TxtBox_Constant.Text);
             }
-            catch (Exception ee)
+            catch (Exception)
             {
                 MessageBox.Show("El valor de la Constante es erroneo");
                 return;
