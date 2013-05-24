@@ -23,10 +23,16 @@ namespace WesselSoft.Ui
             double fase2 = double.Parse(TxtBox_Phase2.Text);
             TipoFuncionSenoidal tipoFuncion1;
             TipoFuncionSenoidal tipoFuncion2;
-            if (Enum.TryParse(ComboBox_Function1.SelectedItem.ToString(), out tipoFuncion1) == false)
+
+            try
+            {
+                tipoFuncion1 = (TipoFuncionSenoidal)Enum.Parse(typeof(TipoFuncionSenoidal), ComboBox_Function1.SelectedItem.ToString(), true);
+                tipoFuncion2 = (TipoFuncionSenoidal)Enum.Parse(typeof(TipoFuncionSenoidal), ComboBox_Function2.SelectedItem.ToString(), true);
+            }
+            catch (ArgumentException)
+            {
                 return;
-            if (Enum.TryParse(ComboBox_Function2.SelectedItem.ToString(), out tipoFuncion2) == false)
-                return;
+            }
             
             FuncionSenoidal fasor1 = new FuncionSenoidal(amplitud1, tipoFuncion1, frecuencia1, fase1);
             FuncionSenoidal fasor2 = new FuncionSenoidal(amplitud2, tipoFuncion2, frecuencia2, fase2);

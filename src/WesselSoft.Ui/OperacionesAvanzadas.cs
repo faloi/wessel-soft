@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using WesselSoft.Domain;
@@ -48,7 +48,7 @@ namespace WesselSoft.Ui
                         break;
                     case "Potencia":
                         resultados = new List<Complejo>();
-                        resultados.Add(complejo1.ElevarA((uint) coeficienteEntero));
+                        resultados.Add(complejo1.ElevarA(coeficienteEntero));
                         break;
                     default:
                         return;

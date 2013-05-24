@@ -13,8 +13,7 @@ namespace WesselSoft.Ui
                                                  .OfType<RadioButton>()
                                                  .FirstOrDefault(r => r.Checked);
             Representacion enumOut;
-            Enum.TryParse(checkedButton.Text, false, out enumOut);
-            return enumOut;
+            return (Representacion) Enum.Parse(typeof (Representacion), checkedButton.Text, false);
         }
 
 
