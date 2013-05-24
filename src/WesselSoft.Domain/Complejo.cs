@@ -15,14 +15,23 @@ namespace WesselSoft.Domain
             return Math.Sqrt(Math.Pow(this.ParteReal, 2) + Math.Pow(this.ParteImaginaria, 2));
         } }
 
-        public double Argumento { get {
-            if (this.EsNulo)
-                throw new ComplejoNuloException("No se puede calcular el argumento del complejo nulo");
+        public double Argumento
+        {
+            get
+            {
+                if (this.EsNulo)
+                    throw new ComplejoNuloException("No se puede calcular el argumento del complejo nulo");
 
-            var valorBase = Math.Atan(this.ParteImaginaria / this.ParteReal);
-            if (this.ParteReal < 0) valorBase += Math.PI;
-            return valorBase;
-        } }
+                if (this.ParteReal != 0)
+                {
+                    var valorBase = Math.Atan(this.ParteImaginaria / this.ParteReal);
+                    if (this.ParteReal < 0) valorBase += Math.PI;
+                    return valorBase;
+                }
+
+                return this.ParteImaginaria > 0 ? Math.PI / 2 : 3 * Math.PI / 2;
+            }
+        }
 
         public Complejo Conjugado { get {
             return Complejo.DesdeFormaBinomica(this.ParteReal, -this.ParteImaginaria);
@@ -32,7 +41,7 @@ namespace WesselSoft.Domain
             return this.ParteReal == 0 && this.ParteImaginaria == 0;
         } }
 
-        public Complejo ElevarA(uint natural) {
+        public Complejo ElevarA(int natural) {
             return Complejo.DesdeFormaPolar(Math.Pow(this.Modulo, natural), natural * this.Argumento);
         }
 
@@ -82,6 +91,11 @@ namespace WesselSoft.Domain
                 return Complejo.DesdeFormaBinomica(0, 1);
             } }
         #endregion
+
+        public override string ToString()
+        {
+            return this.ToString(Representacion.Binomica);
+        }
 
         public string ToString(Representacion representacion)
         {
