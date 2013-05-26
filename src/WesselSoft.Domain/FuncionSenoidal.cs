@@ -46,6 +46,7 @@ namespace WesselSoft.Domain
 
                     break;
             }
+            this.Tipo = otroTipo;
         }
     }
 }
