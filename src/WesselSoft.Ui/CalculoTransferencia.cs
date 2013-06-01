@@ -15,13 +15,22 @@ namespace WesselSoft.Ui
 
         private void Btn_Calculate_Click(object sender, System.EventArgs e)
         {
-            IList<Complejo> polos;
-            IList<Complejo> ceros;
+            IList<Complejo> polos = new List<Complejo>();
+            IList<Complejo> ceros = new List<Complejo>();
             try
             {
-                polos = TxtBox_Poles.Text.Split('\n').Select(polo => Complejo.DesdeString(polo.Trim())).ToList();
-                ceros = TxtBox_Zeros.Text.Split('\n').Select(polo => Complejo.DesdeString(polo.Trim())).ToList();
-
+                foreach (string str in TxtBox_Poles.Text.Split('\n'))
+                {
+                    String poloString = str.Trim();
+                    if (!String.IsNullOrEmpty(poloString))
+                        polos.Add(Complejo.DesdeString(poloString));
+                }
+                foreach (string str in TxtBox_Zeros.Text.Split('\n'))
+                {
+                    String ceroString = str.Trim();
+                    if (!String.IsNullOrEmpty(ceroString))
+                        ceros.Add(Complejo.DesdeString(ceroString));
+                }
             }
             catch (Exception ee)
             {
